@@ -1,4 +1,4 @@
-#Here we use A runke kutta method of five order using complex coefficients (https://arxiv.org/pdf/2110.04402)
+#Here we use a Ruge-Kutta method of fifth order using complex coefficients (https://arxiv.org/pdf/2110.04402)
 from numpy import array, real
 
 def RK5_c(f,y0,t,dt,*args):

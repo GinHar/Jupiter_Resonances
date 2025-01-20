@@ -14,7 +14,7 @@ class Moon:
         return self.periapsis  # Give the array
 
 
-# Function to obtain the data from three differents times
+# Function to obtain the data from three different times
 def obtener_datos(frame):
 
     # Initialize variables

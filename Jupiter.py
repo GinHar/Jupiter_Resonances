@@ -1,5 +1,5 @@
 import numpy as np
-from RK_5_complex import RK5_c
+from RK5_complex import RK5_c
 import time
 
 # Saves in an unique archive .npy

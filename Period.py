@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 directory = 'Data' 
 
 # Obtain the arhives that start with 'Jup_' and end with '.npy'
-archive = sorted(
+archives = sorted(
     [f for f in os.listdir(directory) if f.startswith('Jup_') and f.endswith('.npy')],
     key=lambda f: int(f.split('_')[1].split('.')[0])  # Extrac the number to order
 )
@@ -16,7 +16,7 @@ archive = sorted(
 # Obtaining the frequencies
 max_frequencies = []
 for archive in archives:
-    x = np.load(archive) #Load each archive
+    x = np.load(os.path.join(directory, archive)) #Load each archive
     r = np.sqrt((x[:, 0, 1:] - x[:, 0, 0:1])**2 + (x[:, 1, 1:] - x[:, 1, 0:1])**2) # Distance between Jupyter and his moons
     
     # FFT

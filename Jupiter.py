@@ -1,5 +1,6 @@
 import numpy as np
 from RK5_complex import RK5_c
+import os
 import time
 
 # Saves in an unique archive .npy
@@ -33,7 +34,7 @@ def der_pos_vel(x,t,M):
 
 start_time=time.time()
 
-dt = 10
+dt = 120
 t_fin = 3600*24*365*5
 t0 = 0
 t = np.arange(t0,t_fin,dt)
@@ -57,7 +58,7 @@ t = np.arange(t0,t_fin,dt)
 
 
 counter = 1
-print("It is going to be saved " + np.floor(N/10000) + "files")
+print("It is going to be created " + str(np.floor(N/10000)) + " files")
 for i in np.arange(1,N):
     x = np.concatenate((x,RK5_c(der_pos_vel,np.squeeze(x[-1:,:,:]),t[i],dt,M)[np.newaxis,:,:]),axis = 0)
 

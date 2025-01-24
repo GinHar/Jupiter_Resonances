@@ -62,11 +62,11 @@ for i in np.arange(1,N):
     x = np.concatenate((x,RK5_c(der_pos_vel,np.squeeze(x[-1:,:,:]),t[i],dt,M)[np.newaxis,:,:]),axis = 0)
 
     if x.shape[0] >= 10000:
-        print("File "+ str(counter) + "calculated")
         # Convert the array to a NumPy format.
         np_x = np.real(np.array(x[:-1,:,:]))  # All except the last one
         # Save with an unique name
         save_file("Jup", (np_x).real.astype(np.float64), counter)
+        print("File "+ str(counter) + " has been created")
         counter += 1  # Increase the counter
         # Hold only the last one element
         x = x[-1:,:,:]

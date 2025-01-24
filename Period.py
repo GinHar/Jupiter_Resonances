@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 
 
-# directory where there are .npy archives
+# Directory where there are .npy archives
 directory = 'Data' 
 
 # Obtain the arhives that start with 'Jup_' and end with '.npy'
